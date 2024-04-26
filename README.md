@@ -11,6 +11,7 @@ The dataset includes the following files:
 4. `requirements.json`: Comprises 15,000 cases, including:
    - 10,000 cases with requirements
    - 5,000 cases without requirements
+5. `best_solutions.json`: Provides the optimal solutions corresponding to the cases.
 
 ## Usage
 
