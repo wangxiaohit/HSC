@@ -340,4 +340,6 @@ print(f"Solve time: {sol['time']:.2f}s")
 
 ## License
 
-This dataset is fully open. Licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Please cite the data source when using it.
+This dataset is fully open. Licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Please cite the following article when using this data:
+
+> HSC: An Artificial Intelligence Service Dataset for Service Composition from Hugging Face
