@@ -222,10 +222,10 @@ Each requirement simulates a real-world business scenario and typically includes
 |---|---|---|
 | `req_number` | `Integer` | Requirement index (0-based), corresponding to `requirements.json` and `workflow.json` |
 | `best_value` | `Float` | Composite objective function score of the best solution |
-| `best_solution` | `Array[Integer]` | Optimal solution: each integer is the **index into the candidate service list** for that workflow stage |
+| `best_solution` | `Array[Integer]` | Optimal solution: each integer is the **absolute index** into `normalized_model.json` for the selected service at that workflow stage |
 | `time` | `Float` | Algorithm solving time in seconds |
 
-> **`best_solution` field:** The array length equals the number of stages in the corresponding `workflow.json[i].flow`. Each integer value is a positional index into the list of services in `normalized_model.json` that match the functional category of that stage.
+> **`best_solution` field:** The array length equals the number of stages in the corresponding `workflow.json[i].flow`. Each integer value is the **absolute index** of the selected service in `normalized_model.json` (i.e., `normalized_model.json[index]` gives the chosen service directly).
 
 **`best_value` formula example:**
 
@@ -307,7 +307,7 @@ with open('best_solution.json', 'r', encoding='utf-8') as f:
 sol = solutions[0]
 print(f"Requirement index: {sol['req_number']}")
 print(f"Best score: {sol['best_value']:.4f}")
-print(f"Best solution (stage candidate indices): {sol['best_solution']}")
+print(f"Best solution (absolute indices in normalized_model.json): {sol['best_solution']}")
 print(f"Solve time: {sol['time']:.2f}s")
 ```
 
